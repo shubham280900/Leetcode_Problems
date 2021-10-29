@@ -1,0 +1,18 @@
+So lets understand the code PYTHON3. We are again going to use two pointers in this.
+
+
+
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        l=0 
+        r=len(height)-1
+        curr,area=0,0
+        while l<r:
+            curr = min(height[l],height[r])*(r-l)
+            area = max(area,curr)
+            if height[l]<height[r]:
+                l=l+1
+            else:
+                r=r-1
+        return area        
+
